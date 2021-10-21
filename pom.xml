@@ -14,7 +14,7 @@
 	<name>Datavisboard</name>
 	<description>Dynamic Chart - Graph with HighChart Api + Thymeleaf + Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
