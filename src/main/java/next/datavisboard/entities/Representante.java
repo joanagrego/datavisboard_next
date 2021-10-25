@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -25,7 +26,6 @@ public class Representante implements Serializable {
     @Column(name = "NOME", nullable = false,unique = false)
     private String nome;
 
-    @OneToMany
-    @JoinColumn(name = "CLIENTE")
-    private List clientes;
+    @OneToMany(mappedBy = "representante")
+    private Set<Cliente> clientes;
 }

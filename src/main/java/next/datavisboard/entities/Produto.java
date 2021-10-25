@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @Entity
@@ -26,7 +27,8 @@ public class Produto implements Serializable {
     @Column(name = "VALOR", nullable = false, unique = false)
     private Long valor;
 
-    @ManyToOne(targetEntity = Pedido.class)
-    private Pedido pedido;
+    @ManyToOne
+    @JoinColumn(name="ID_PRODUTO")
+    private Venda venda;
 
 }

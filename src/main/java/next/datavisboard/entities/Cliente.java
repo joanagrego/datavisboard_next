@@ -20,13 +20,13 @@ public class Cliente implements Serializable {
     @Column(name = "ID", nullable = false, unique = true)
     private Long id;
 
-    @Column(name = "RAZÃO SOCIAL", nullable = false, unique = true)
+    @Column(name = "CLIENTE", nullable = false, unique = true)
     private String cliente;
 
-    @OneToOne(targetEntity = Representante.class)
+    @ManyToOne
+    @JoinColumn(name = "representante_id", nullable = false)
     private Representante representante;
 
-    @OneToOne(targetEntity = Pedido.class)
-    private Pedido pedido;
+
 
 }
