@@ -27,7 +27,7 @@ public class Produto implements Serializable {
     @Column(name = "VALOR", nullable = false, unique = false)
     private Long valor;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name="ID_PRODUTO")
     private Venda venda;
 
