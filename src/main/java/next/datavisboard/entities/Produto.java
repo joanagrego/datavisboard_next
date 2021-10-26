@@ -25,7 +25,7 @@ public class Produto implements Serializable {
     private String produto;
 
     @Column(name = "VALOR", nullable = false, unique = false)
-    private Long valor;
+    private Integer valor;
 
     @OneToOne
     @JoinColumn(name="ID_PRODUTO")

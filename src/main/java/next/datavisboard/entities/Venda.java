@@ -37,15 +37,13 @@ public class Venda implements Serializable {
     private Representante representantes;
 
     @Column(name = "QUANTIDADE", nullable = false, unique = false)
-    private Long quantidade;
+    private Integer quantidade;
 
     @OneToOne
     @JoinColumn(name = "PRODUTO")
     private Produto produtos;
 
 
-
-    //VALOR TOTAL?
 
 
 

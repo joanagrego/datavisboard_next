@@ -28,5 +28,7 @@ public class Cliente implements Serializable {
     private Representante representante;
 
 
-
+    public Cliente(String nome) {
+        nome = cliente;
+    }
 }
