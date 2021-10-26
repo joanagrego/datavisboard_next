@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -20,12 +21,13 @@ public class Representante implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, unique = true)
-    private Long id;
+    @Column(name = "ID_REPRESENTANTE", nullable = false, unique = true)
+    private Long idRepresentante;
 
-    @Column(name = "NOME", nullable = false,unique = false)
-    private String nome;
+    @Column(name = "NOME_REPRESENTANTE", nullable = false)
+    private String nomeRepresentante;
 
-    @OneToMany(mappedBy = "representante")
-    private Set<Cliente> clientes;
+    //@OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+    //@JoinColumn(name="ID_CLIENTES")
+    //private Cliente clientes;
 }

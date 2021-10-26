@@ -18,17 +18,17 @@ public class Produto implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false, unique = true)
-    private Long id;
+    @Column(name = "ID_PRODUTO", nullable = false, unique = true)
+    private Long idProduto;
 
-    @Column(name = "PRODUTO", nullable = false, unique = false)
-    private String produto;
+    @Column(name = "NOME_PRODUTO", nullable = false)
+    private String nomeProduto;
 
-    @Column(name = "VALOR", nullable = false, unique = false)
-    private Integer valor;
+    @Column(name = "VALOR_PRODUTO", nullable = false)
+    private Double valorProduto;
 
-    @OneToOne
-    @JoinColumn(name="ID_PRODUTO")
-    private Venda venda;
+    //@OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+    //@JoinColumn(name="ID_PRODUTO")
+    //private Venda venda;
 
 }

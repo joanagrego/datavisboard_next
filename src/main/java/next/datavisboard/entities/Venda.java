@@ -16,36 +16,32 @@ import java.util.List;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "VENDA")
+@Table(name = "VENDAS")
 public class Venda implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false, unique = true)
-    private Long id;
+    @Column(name = "ID_VENDA", nullable = false, unique = true)
+    private Long idVenda;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "DATA", nullable = false, unique = false)
-    Date publicationDate;
+    @Column(name = "DATA_DA_VENDA", nullable = false)
+    private Date dataVenda;
 
-    @OneToOne
-    @JoinColumn(name = "CLIENTE")
-    private Cliente clientes;
+    @Column(name = "QUANTIDADE_VENDA", nullable = false)
+    private Integer quantidadeVenda;
 
-    @OneToOne
-    @JoinColumn(name = "REPRESENTANTE")
-    private Representante representantes;
+    //@OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+    //@JoinColumn(name = "CLIENTE")
+    //private Cliente clientes;
 
-    @Column(name = "QUANTIDADE", nullable = false, unique = false)
-    private Integer quantidade;
+    //@OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+    //@JoinColumn(name = "REPRESENTANTE")
+    //private Representante representantes;
 
-    @OneToOne
-    @JoinColumn(name = "PRODUTO")
-    private Produto produtos;
-
-
-
-
+    //@OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+    //@JoinColumn(name = "PRODUTO")
+    //private Produto produtos;
 
 
 }

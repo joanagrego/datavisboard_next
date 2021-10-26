@@ -17,18 +17,13 @@ public class Cliente implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false, unique = true)
-    private Long id;
+    @Column(name = "ID_CLIENTE", nullable = false, unique = true)
+    private Long idCliente;
 
-    @Column(name = "CLIENTE", nullable = false, unique = true)
-    private String cliente;
+    @Column(name = "NOME_CLIENTE", nullable = false, unique = true)
+    private String nomeCliente;
 
-    @ManyToOne
-    @JoinColumn(name = "representante_id", nullable = false)
-    private Representante representante;
-
-
-    public Cliente(String nome) {
-        nome = cliente;
-    }
+    //@ManyToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+    //@Column(name = "representante_id", nullable = false)
+    //private Representante representante;
 }
