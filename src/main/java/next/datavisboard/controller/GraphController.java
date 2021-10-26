@@ -1,5 +1,8 @@
 package next.datavisboard.controller;
 
+import next.datavisboard.entities.Cliente;
+import next.datavisboard.services.ClienteService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,9 +14,14 @@ import java.util.Map;
 
 @Controller
 public class GraphController {
+    @Autowired
+    private ClienteService clienteService;
 
     @GetMapping("/datavis")
     public String datavis(Model model){
+
+        List<Cliente> clientes = clienteService.findAll();
+
 
         Map<String, Integer> data = new LinkedHashMap<String, Integer>();
         data.put("Thaynam", 11);

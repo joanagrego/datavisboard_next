@@ -31,17 +31,16 @@ public class Venda implements Serializable {
     @Column(name = "QUANTIDADE_VENDA", nullable = false)
     private Integer quantidadeVenda;
 
-    //@OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
-    //@JoinColumn(name = "CLIENTE")
-    //private Cliente clientes;
+    @OneToOne
+    @JoinColumn(name = "CLIENTE_ID", referencedColumnName = "ID_CLIENTE")
+    private Cliente cliente;
 
-    //@OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
-    //@JoinColumn(name = "REPRESENTANTE")
-    //private Representante representantes;
+    @OneToOne
+    @JoinColumn(name = "REPRESENTANTE_ID", referencedColumnName = "ID_REPRESENTANTE")
+    private Representante representante;
 
-    //@OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
-    //@JoinColumn(name = "PRODUTO")
-    //private Produto produtos;
-
+    @OneToOne
+    @JoinColumn(name = "PRODUTO_ID", referencedColumnName = "ID_PRODUTO")
+    private Produto produto;
 
 }
