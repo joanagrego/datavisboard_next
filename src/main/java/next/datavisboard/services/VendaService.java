@@ -5,6 +5,8 @@ import next.datavisboard.dao.VendaDao;
 import next.datavisboard.entities.Cliente;
 import next.datavisboard.entities.Venda;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
@@ -24,5 +26,10 @@ public class VendaService {
     public List<Venda> findAll(){
         return vendaDao.findAll();
     }
+
+   public List<Venda> findVendaById() {return vendaDao.FindVendaById();}
+
+
+
 
 }

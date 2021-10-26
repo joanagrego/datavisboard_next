@@ -90,6 +90,9 @@ public class DatavisboardApplication implements WebMvcConfigurer {
                 vendaservice.save(venda3);
                 vendaservice.save(venda4);
 
+               List<Venda> vendaById = vendaservice.findVendaById();
+               System.out.println(vendaById.size());
+
                 System.out.println("Rodando");
                 List<Cliente> clientes = clienteService.findAll();
                 System.out.println(clientes.size());
