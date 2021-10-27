@@ -22,6 +22,9 @@ public class ClienteService {
         return clienteDao.findAll();
     }
 
+    public Integer quantidadeClientesAtivos(){
+        return clienteDao.quantidadeClientesAtivos();
+    }
 
 
 }

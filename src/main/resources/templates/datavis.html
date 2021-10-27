@@ -79,11 +79,11 @@
       }
     },
     series: [{
-      name: 'Inativos',
-      data: [25]
-    }, {
       name: 'Ativos',
-      data: [75]
+      data: [[${clientesAtivos}]]
+    }, {
+      name: 'Inativos',
+      data: [[${clientesInativos}]]
     }]
   });
 
@@ -116,7 +116,7 @@
     series : [ {
       type : 'pie',
       name : 'Percentual',
-      data : [ [ 'REP.BELTRANO', [[${beltrano}]] ], [ 'REP.MEVIO', [[${mevio}]] ], [ 'REP. TICIO', [[${ticio}]] ]  ]
+      data :  [ [ 'Pass', [[${pass}]] ], [ 'Fail', [[${fail}]] ]  ]
     } ]
   });
 
@@ -149,7 +149,7 @@
       text: 'Atendimento de Clientes na Carteira por Representante'
     },
     xAxis: {
-      categories: ['Mevio', 'Ticio', 'Caio','Beltrano']
+      categories: [[${keySet}]],
     },
     yAxis: {
       title: {
@@ -158,7 +158,7 @@
     },
     series: [{
       name: 'Total de Clientes',
-      data: [6200, 5900, 7900, 6300]
+      data: [[${values}]]
     }, {
       name: 'Clientes Atendidos',
       data: [3800, 4000, 2100, 3650]
