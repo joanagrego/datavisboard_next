@@ -1,7 +1,9 @@
 package next.datavisboard.controller;
 
 import next.datavisboard.entities.Cliente;
+import next.datavisboard.entities.Venda;
 import next.datavisboard.services.ClienteService;
+import next.datavisboard.services.VendaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +18,8 @@ import java.util.Map;
 public class GraphController {
     @Autowired
     private ClienteService clienteService;
+    @Autowired
+    private VendaService vendaService;
 
     @GetMapping("/datavis")
     public String datavis(Model model){
@@ -41,9 +45,16 @@ public class GraphController {
         model.addAttribute("keySet", data.keySet());
         model.addAttribute("values",data.values());
 
-        model.addAttribute("beltrano",39.5);
-        model.addAttribute("mevio",20.5);
-        model.addAttribute("ticio",29.1);
+
+        List<Venda> Vendas = vendaService.findAll();
+        Integer vendas_volume = vendaService.vendas_volume();
+
+        Map<Integer, Integer> vendas = new LinkedHashMap<~>();
+        vendas.put();
+
+        model.addAttribute("keyset",vendas.keySet());
+        model.addAttribute("values",vendas.values());
+
 
         model.addAttribute("pass", 90);
         model.addAttribute("fail", 10);
