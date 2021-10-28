@@ -31,10 +31,9 @@ public class VendaService {
 
     public List<Venda> findByCurrentMonthYear() {return vendaDao.findByCurrentMonthYear(); }
 
+    public List<Object[]> findByQuantities(){return vendaDao.findByQuantities(); }
 
-    public Integer vendas_volume(){
-        return vendaDao.vendas_volume();
-    }
+
 }
 
 

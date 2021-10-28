@@ -128,7 +128,7 @@
       text: 'Produção dos Representantes por Volume de Venda'
     },
     xAxis: {
-      categories: ['Mevio', 'Ticio','Caio','Beltrano']
+      categories: [ [[${nomesRep}]] ]
     },
     yAxis: {
       title: {
@@ -137,7 +137,7 @@
     },
     series: [{
       name: 'Caixas Vendidas',
-      data: [1000, 2000, 4000, 2500]
+      data: [ [[${qntVendida}]] ]
     }]
   });
 

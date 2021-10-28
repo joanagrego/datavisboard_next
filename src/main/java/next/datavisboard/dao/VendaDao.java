@@ -1,6 +1,4 @@
 package next.datavisboard.dao;
-
-
 import next.datavisboard.entities.Venda;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -16,6 +14,6 @@ public interface VendaDao extends JpaRepository<Venda,Long> {
     List<Venda> findByCurrentMonthYear();
 
     @Query(value = "SELECT REPRESENTANTE_ID, SUM(QUANTIDADE_VENDA) as quantidade_venda FROM vendas GROUP BY REPRESENTANTE_ID", nativeQuery = true)
-    Integer vendas_volume();
+    List<Object[]> findByQuantities();
 
 }

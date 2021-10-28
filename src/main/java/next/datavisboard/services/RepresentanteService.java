@@ -22,4 +22,8 @@ public class RepresentanteService {
     public List<Representante> findAll(){
         return representanteDao.findAll();
     }
+
+    public Integer quantidadeCaixasVendidas(){
+        return representanteDao.quantidadeCaixasVendidas();
+    }
 }
