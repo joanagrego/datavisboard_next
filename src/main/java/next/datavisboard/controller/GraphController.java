@@ -29,32 +29,28 @@ public class GraphController {
 
     @GetMapping("/datavis")
     public String datavis(Model model){
+        //TODO - PASSAR CÓDIGOS DE NEGÓCIOS PARA SEUS RESPECTIVOS SERVICES
 
+
+        //Highchart1 - Atividade Mensal dos Clientes da Carteira
         Integer clientesAtivos = clienteService.quantidadeClientesAtivos();;
         Integer clientesInativos = clienteService.quantidadeTotalClientes() - clientesAtivos;
 
-        //Highchart1 - Atividade Mensal dos Clientes da Carteira
         Map<Integer, Integer> clientes = new LinkedHashMap<Integer, Integer>();
         clientes.put(clientesAtivos,clientesInativos);
 
         model.addAttribute("clientesAtivos",clientes.keySet());
         model.addAttribute("clientesInativos",clientes.values());
 
-
+        //Highchart2 - Produção dos Representantes por Valor
+        //TODO - FAZER MAPA DE OBJETOS PARA GERAR GRÁFICO PIZZA EM HTML COM DADOS DO DATABASE
         Map<String, Integer> data = new LinkedHashMap<String, Integer>();
 
-        data.put("Thaynam", 11);
-        data.put("Joana", 21);
-        data.put("Carlos", 31);
-        data.put("Cadu", 41);
-        model.addAttribute("keySet", data.keySet());
-        model.addAttribute("values",data.values());
+        model.addAttribute("joana", 10);
+        model.addAttribute("thaynam", 20);
+        model.addAttribute("tamyris", 30);
 
-        model.addAttribute("pass", 90);
-        model.addAttribute("fail", 10);
-
-
-
+        //Highchart3 - Produção dos Representantes por Volume de Venda
         Map<String, BigDecimal> representantes = new LinkedHashMap<String, BigDecimal>();
         List<Object[]> mylist = vendaService.findByQuantities();
         for (Object[] obj: mylist) {
@@ -62,12 +58,16 @@ public class GraphController {
             BigDecimal quantidadeCX = (BigDecimal) obj[1];
             representantes.put(nomeRepresentante, quantidadeCX);
         }
-
-
         model.addAttribute("nomesRep",representantes.keySet());
         model.addAttribute("qntVendida",representantes.values());
 
-
+        //Highchart4 - Atendimento de Clientes na Carteira por Representante
+        //TODO - FAZER MAPA DE OBJETOS PARA GERAR GRÁFICO BARRAS DUPLAS EM HTML COM DADOS DO DATABASE
+        data.put("Thaynam Lázaro", 15);
+        data.put("Joana Grego", 10);
+        data.put("Tamyris Torres", 12);
+        model.addAttribute("keySet", data.keySet());
+        model.addAttribute("values",data.values());
 
         return "datavis";
     }

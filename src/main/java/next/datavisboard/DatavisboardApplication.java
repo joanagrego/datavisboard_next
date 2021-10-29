@@ -35,6 +35,8 @@ public class DatavisboardApplication implements WebMvcConfigurer {
 
 	@Component
 	public class MyRunner implements CommandLineRunner {
+        //CommandLineRunner is an interface used to indicate that a bean should run when it is
+        //contained within a SpringApplication.
 
 		@Autowired
 		private VendaService vendaservice;
@@ -47,6 +49,9 @@ public class DatavisboardApplication implements WebMvcConfigurer {
 
 			@Override
 			public void run(String... args) throws Exception {
+                //Utilizado para inserir os dados no banco.
+                //TODO - CRIAR CONTROLLER POST PARA FAZER ESTE TRABALHO
+
 				Representante representante1 = new Representante(null,"Joana Grego");
                 Representante representante2 = new Representante(null,"Thaynam Lázaro");
                 Representante representante3 = new Representante(null,"Tamyris Torres");
@@ -90,44 +95,6 @@ public class DatavisboardApplication implements WebMvcConfigurer {
                 vendaservice.save(venda3);
                 vendaservice.save(venda4);
 
-                List<Cliente> clientes = clienteService.findAll();
-                Integer totalClientes = clienteService.quantidadeTotalClientes();
-                Integer clientesAtivos = clienteService.quantidadeClientesAtivos();;
-                Integer clientesInativos = clienteService.findAll().size() - clientesAtivos;
-                System.out.println(totalClientes);
-                System.out.println(clientesAtivos);
-                System.out.println(clientesInativos);
-
-                List<Representante> representantes = representanteService.findAll();
-                Integer totalRepresentantes = representanteService.findAll().size();
-
-
-
             }
 		}
 	}
-
-
-		/*cliente.setCliente("João Pedro");
-		cliente.setCliente("Miguel Bernardo");
-		cliente.setCliente("Dennys Cesar");
-		cliente.setCliente("Samuel Cesar");
-		cliente.setCliente("Endrigo Cesar");
-		cliente.setCliente("Maria José");
-		cliente.setCliente("Pedro João");
-		cliente.setCliente("Leandro Vinicius");
-		cliente.setCliente("Cecilia Marques");
-		cliente.setCliente("Vitor Cesar");
-		cliente.setCliente("Marina Raquel");
-		cliente.setCliente("Myllena Carla");*/
-
-
-		//representante.setNome("Thaynam Lázaro");
-		//representante.setNome("Carlos Eduardo");
-		//representante.setNome("Tamyris Torres");
-		//representante.setNome("Carlos Roberto");
-
-
-
-
-

@@ -27,8 +27,4 @@ public class Produto implements Serializable {
     @Column(name = "VALOR_PRODUTO", nullable = false)
     private Double valorProduto;
 
-    //@OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
-    //@JoinColumn(name="ID_PRODUTO")
-    //private Venda venda;
-
 }

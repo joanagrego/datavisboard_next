@@ -18,10 +18,6 @@ public class ClienteService {
         clienteDao.save(cliente);
     }
 
-    public List<Cliente> findAll() {
-        return clienteDao.findAll();
-    }
-
     public Integer quantidadeClientesAtivos(){
         return clienteDao.quantidadeClientesAtivos();
     }

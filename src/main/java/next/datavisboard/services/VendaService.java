@@ -25,14 +25,7 @@ public class VendaService {
         vendaDao.save(venda);
     }
 
-    public List<Venda> findAll() {
-        return vendaDao.findAll();
-    }
-
-    public List<Venda> findByCurrentMonthYear() {return vendaDao.findByCurrentMonthYear(); }
-
     public List<Object[]> findByQuantities(){return vendaDao.findByQuantities(); }
-
 
 }
 

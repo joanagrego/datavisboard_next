@@ -18,7 +18,4 @@ public class ProdutoService {
         produtoDao.save(produto);
     }
 
-    public List<Produto> findAll(){
-        return produtoDao.findAll();
-    }
 }

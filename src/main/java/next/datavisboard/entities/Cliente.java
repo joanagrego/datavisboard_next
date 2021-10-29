@@ -23,7 +23,4 @@ public class Cliente implements Serializable {
     @Column(name = "NOME_CLIENTE", nullable = false, unique = true)
     private String nomeCliente;
 
-    //@ManyToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
-    //@Column(name = "representante_id", nullable = false)
-    //private Representante representante;
 }

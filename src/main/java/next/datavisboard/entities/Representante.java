@@ -27,7 +27,4 @@ public class Representante implements Serializable {
     @Column(name = "NOME_REPRESENTANTE", nullable = false)
     private String nomeRepresentante;
 
-    //@OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
-    //@JoinColumn(name="ID_CLIENTES")
-    //private Cliente clientes;
 }
