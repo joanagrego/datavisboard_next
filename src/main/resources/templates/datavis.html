@@ -125,19 +125,19 @@
       type: 'bar'
     },
     title: {
-      text: 'Produção dos Representantes na Cartela de Clientes'
+      text: 'Produção dos Representantes por Volume de Venda'
     },
     xAxis: {
-      categories: ['Mevio', 'Ticio','Caio','Beltrano']
+      categories: [[${nomesRep}]]
     },
     yAxis: {
       title: {
-        text: 'Clientes'
+        text: 'Caixas'
       }
     },
     series: [{
-      name: 'Clientes Atendidos',
-      data: [1000, 2000, 4000, 2500]
+      name: 'Caixas Vendidas',
+      data: [[${qntVendida}]]
     }]
   });
 

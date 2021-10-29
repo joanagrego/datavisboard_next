@@ -98,6 +98,10 @@ public class DatavisboardApplication implements WebMvcConfigurer {
                 System.out.println(clientesAtivos);
                 System.out.println(clientesInativos);
 
+                List<Representante> representantes = representanteService.findAll();
+                Integer totalRepresentantes = representanteService.findAll().size();
+
+
 
             }
 		}
