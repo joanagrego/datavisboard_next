@@ -20,9 +20,8 @@ public class GraphController {
     @GetMapping("/datavis")
     public String datavis(Model model){
 
-        List<Cliente> totalClientes = clienteService.findAll();
         Integer clientesAtivos = clienteService.quantidadeClientesAtivos();;
-        Integer clientesInativos = clienteService.findAll().size() - clientesAtivos;
+        Integer clientesInativos = clienteService.quantidadeTotalClientes() - clientesAtivos;
 
         //Highchart1 - Atividade Mensal dos Clientes da Carteira
         Map<Integer, Integer> clientes = new LinkedHashMap<Integer, Integer>();

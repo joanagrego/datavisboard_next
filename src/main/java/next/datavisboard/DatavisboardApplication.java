@@ -91,7 +91,7 @@ public class DatavisboardApplication implements WebMvcConfigurer {
                 vendaservice.save(venda4);
 
                 List<Cliente> clientes = clienteService.findAll();
-                Integer totalClientes = clienteService.findAll().size();
+                Integer totalClientes = clienteService.quantidadeTotalClientes();
                 Integer clientesAtivos = clienteService.quantidadeClientesAtivos();;
                 Integer clientesInativos = clienteService.findAll().size() - clientesAtivos;
                 System.out.println(totalClientes);
