@@ -26,5 +26,8 @@ public class ClienteService {
         return clienteDao.quantidadeClientesAtivos();
     }
 
+    public Integer quantidadeTotalClientes(){
+        return clienteDao.quantidadeTotalClientes();
+    }
 
 }
