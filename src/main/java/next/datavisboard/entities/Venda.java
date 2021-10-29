@@ -37,6 +37,7 @@ public class Venda implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "REPRESENTANTE_ID", referencedColumnName = "ID_REPRESENTANTE")
+    @JoinColumn(name = "REPRESENTANTE", referencedColumnName = "NOME_REPRESENTANTE")
     private Representante representante;
 
     @OneToOne

@@ -56,12 +56,12 @@ public class GraphController {
 
 
 
-        Map<BigInteger, BigDecimal> representantes = new LinkedHashMap<BigInteger, BigDecimal>();
+        Map<String, BigDecimal> representantes = new LinkedHashMap<String, BigDecimal>();
         List<Object[]> mylist = vendaService.findByQuantities();
         for (Object[] obj: mylist) {
-            BigInteger representanteID = (BigInteger) obj[0];
+            String nomeRepresentante = (String) obj[0];
             BigDecimal quantidadeCX = (BigDecimal) obj[1];
-            representantes.put(representanteID, quantidadeCX);
+            representantes.put(nomeRepresentante, quantidadeCX);
         }
 
 
